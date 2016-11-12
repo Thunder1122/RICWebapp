@@ -1,0 +1,96 @@
+<head>
+  <link rel="stylesheet" href="RIC CSS.css">
+</head>
+
+<body>
+	<div id="top-half">
+		<div id="top-left-half">
+			<div id="name">
+				<div id="nameText">Weight Watcher Web Portal</div>
+			</div>
+			<div id="timer">
+				<div class="container">
+					<input id="start" name="controls" type="radio" onclick="startSeconds()" />
+					<input id="stop" name="controls" type="radio" onclick="addOne(); stopSeconds();" />
+					<input id="reset" name="controls" type="radio" onclick="stopSeconds()"/>
+					<div class="timer">
+						<div class="cell">
+							<div class="numbers tenhour moveten" id="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
+						</div>
+						<div class="cell">
+							<div class="numbers hour moveten" id="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+						</div>
+						<div class="cell divider"><div class="numbers">:</div></div>
+						<div class="cell">
+							<div class="numbers tenminute movesix" id="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+						</div>
+						<div class="cell">
+							<div class="numbers minute moveten" id="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+						</div>
+						<div class="cell divider"><div class="numbers">:</div></div>
+						<div class="cell">
+							<div class="numbers tensecond movesix" id="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+						</div>
+						<div class="cell">
+							<div class="numbers second moveten" id="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+						</div>
+						<div class="cell divider"><div class="numbers">:</div></div>
+						<div class="cell">
+							<div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+						</div>
+						<div class="cell">
+							<div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+						</div>
+						<div class="cell">
+							<div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+						</div>
+					</div>
+					<!-- Lables for the controls -->
+					<div id="timer_controls">
+						<label for="start">Start</label>
+						<label for="stop">Stop</label>
+						<label for="reset">Reset</label>
+					</div>
+				</div>
+			</div>
+			<div id="breaks">
+				<div id="breaksText">Number of breaks</div>
+				<div id="breaksNum">0</div>
+				<button id="increment" onclick="addOne()">+</button>
+				<button id="counterReset" class="resetButton" onclick="setCounterToZero()">Reset</button>
+			</div>
+		</div>
+		<div id="top-right-half">
+			<div id="weight">
+			<div id="weightText">Flat Amount of Weight Off-loaded</div>
+			<iframe id="weightFrame" src="http://192.168.4.1/read?:embed=yes&:refresh=yes" width="100%" height="90%"><p>We couldn't reach the weight-measuring device.  Are you sure you're connected to the WiFi network "ESP8266 Thing A7CC"</p></iframe>
+			</div>
+		</div>
+	</div>
+	<div id="bottom-half">
+		<div id="bottom-left-half">
+			<div id="distance">
+				<div id="distanceText">Distance Traveled</div>
+				<div id="distanceNum">0</div>
+				<div id="distanceUnits">meters</div>
+				<button id="distanceReset" class="resetButton" onclick="setDistanceToZero()">Reset Distance Traveled</button>
+			</div>
+			<div id="speed">
+				<div id="speedText">Treadmill Speed</div>
+				<div id="speedNum">0.0</div>
+				<div id="speedUnits">mi/hr</div>
+				<button id="speedReset" class="resetButton" onclick="setSpeedZero(); stopSeconds();">Reset Treadmill Speed</button>
+				<button id="setspeed" onclick="setTreadSpeed()">Input Treadmill Speed</button>
+			</div>
+		</div>
+		<!--
+		<div id="bottom-right-half">
+			<div id="percent">
+				<div id="percentText">Percentage of Weight Off-loaded</div>
+				<button id="percentReset" class="resetButton" onclick="setWeightToZero()">Reset Patient Weight</button>
+				<button id="setweight" onclick="setWeight()">Input Patient Weight</button>
+			</div>
+		</div> -->
+	</div>
+	<script src="RIC JavaScript.js"></script>
+</body>
